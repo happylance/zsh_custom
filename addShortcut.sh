@@ -22,6 +22,6 @@ echo alias $1=\'"$2"\' >> "$DIR/$shortcut_file"
 cd "$DIR"
 git add "$shortcut_file"
 git --no-pager diff --cached
-git commit -m "Added alias $1=\"$2\""
+git commit -m "Added alias $1=\'$2\'"
 
 exec zsh
