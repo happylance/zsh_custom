@@ -1,5 +1,5 @@
 rz () { . ~/.zshrc }
-ez () { vim ~/.oh-my-zsh/custom/shortcuts.zsh }
+ez () { vim "$ZSH_CUSTOM/shortcuts.zsh" }
 tp() { top -stats pid,command,cpu,csw,time,threads,rsize,vsize,faults,state -o rsize }
 sdre() { ssh ec2 -t "screen -dR" }
 nexta() { ssh ec2 -t "tail /var/log/apache2/next/access.log" }
