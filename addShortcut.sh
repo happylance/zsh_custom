@@ -15,6 +15,13 @@ EOF
 . "$HOME/.zshrc"
 which $1 1>/dev/null && { echo "$1 is already defined as follows."; which $1; exit 1; }
 
+shortcut_file=shortcuts.zsh
 #echo "$1() { $2 }" >> "$DIR/shortcuts.zsh"
-echo alias $1=\""$2"\" >> "$DIR/shortcuts.zsh"
+echo alias $1=\""$2"\" >> "$DIR/$shortcut_file"
+
+cd "$DIR"
+git add "$shortcut_file"
+git --no-pager diff --cached
+git commit -m "Added alias $1=\"$2\""
+
 exec zsh
