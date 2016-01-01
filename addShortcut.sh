@@ -9,9 +9,11 @@ EOF
     exit 2
 }
 
-[ -z "$1" ] && _echo_usage()
-[ -z "$2" ] && _echo_usage()
+[ -z "$1" ] && _echo_usage
+[ -z "$2" ] && _echo_usage
 
-which $1 || exit 1
+which $1 && exit 1
 
-echo "$1() { $2 }" >> "$DIR/shortcuts.zsh"
+#echo "$1() { $2 }" >> "$DIR/shortcuts.zsh"
+echo alias $1=\""$2"\" >> "$DIR/shortcuts.zsh"
+exec zsh

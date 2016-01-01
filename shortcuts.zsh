@@ -8,7 +8,7 @@ nexte() { ssh ec2 -t "tail /var/log/apache2/next/error.log" }
 gau () { git add -u }
 gdco() { git difftool -y --cached "$@" }
 gdd() { git diff "$@" }
-crone() {crontab -e }
+crone() { crontab -e }
 syslt() { tail /var/log/system.log }
 sysl() { less /var/log/system.log }
 psh() { php -S 192.168.1.6:8888 }
@@ -18,3 +18,9 @@ alias gd="git difftool -y"
 alias sdr="screen -dR"
 alias nb="$HOME/Developer/scripts/nextBus/toOffice.sh"
 alias ctags="`brew --prefix`/bin/ctags"
+alias glgl="glg --author=Liang"
+alias gcnd="git clean -nd"
+alias gcfd="git clean -fd"
+alias sc="/Users/lliu/.zsh_custom/addShortcut.sh"
+alias dfh="df -h"
+alias gdc="git diff --cached"
