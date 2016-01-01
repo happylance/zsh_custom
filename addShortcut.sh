@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 _echo_usage () {
@@ -12,6 +12,7 @@ EOF
 [ -z "$1" ] && _echo_usage
 [ -z "$2" ] && _echo_usage
 
+. "$HOME/.zshrc"
 which $1 && exit 1
 
 #echo "$1() { $2 }" >> "$DIR/shortcuts.zsh"
