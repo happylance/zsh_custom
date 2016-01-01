@@ -28,3 +28,4 @@ alias tml="tmutil listbackups"
 alias du1="du -hd1"
 alias lz="less $ZSH_CUSTOM/shortcuts.zsh"
 alias scgp='DIR="$(pwd)"; cd "$ZSH_CUSTOM"; git push; cd "$DIR";'
+alias hg='history | grep'
