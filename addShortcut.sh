@@ -13,7 +13,7 @@ EOF
 [ -z "$2" ] && _echo_usage
 
 . "$HOME/.zshrc"
-which $1 && exit 1
+which $1 && { echo "$1 was already defined."; exit 1; }
 
 #echo "$1() { $2 }" >> "$DIR/shortcuts.zsh"
 echo alias $1=\""$2"\" >> "$DIR/shortcuts.zsh"
