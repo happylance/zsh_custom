@@ -7,6 +7,7 @@ alias gd="git difftool -y"
 alias gdc="git diff --cached"
 alias gdco="git difftool -y --cached"
 alias gdd="git diff"
+alias gmy='git mergetool -y'
 alias hg='history | grep'
 alias lz="less $ZSH_CUSTOM/shortcuts.zsh"
 alias sc="$ZSH_CUSTOM/addShortcut.sh"
