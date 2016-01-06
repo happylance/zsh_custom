@@ -1,0 +1,3 @@
+[submodule "plugins"]
+	path = plugins
+	url = git@github.com:happylance/zsh_custom_plugins.git
