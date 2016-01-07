@@ -1,1 +1,1 @@
-alias wh='which'
+./shortcuts/shortcuts.zsh
