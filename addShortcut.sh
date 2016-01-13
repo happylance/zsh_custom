@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+previous_dir=$(pwd)
 . "$HOME/.zshrc"
 [ -z "$ZSH_CUSTOM" ] && { echo "\$ZSH_CUSTOM is not defined."; exit 1; }
 
@@ -31,4 +32,5 @@ git add "$shortcut_file"
 git --no-pager diff --cached
 git commit -m "Added alias $1='$2'"
 
+cd "$previous_dir"
 exec zsh
