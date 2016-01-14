@@ -38,5 +38,6 @@ git add "$shortcut_file"
 git --no-pager diff --cached
 git commit -m "Added alias $1='$2'"
 
+git ls-remote --exit-code origin && git push
 cd "$previous_dir"
 exec zsh
