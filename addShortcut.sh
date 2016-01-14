@@ -29,14 +29,22 @@ set -e
 
 which $1 1>/dev/null && { echo "$1 is already defined as follows."; which $1; exit 1; }
 
-#echo "$1() { $2 }" >> "$DIR/shortcuts.zsh"
 cd "$DIR/$shortcut_folder"
-echo alias $1=\'"$2"\' >> "$shortcut_file"
+
+# If command inlcudes single quotes, use "$command". Otherwise, use '$command'
+command="$2"
+if [ "${command/'}" = "$command" ]; then
+    echo alias $1=\'$command\' >> "$shortcut_file"
+    comments="Added alias $1='$command'"
+else
+    echo alias $1=\"$command\" >> "$shortcut_file"
+    comments="Added alias $1=\"$command\""
+fi
 sort "$shortcut_file" -o "$shortcut_file"
 
 git add "$shortcut_file"
 git --no-pager diff --cached
-git commit -m "Added alias $1='$2'"
+git commit -m "$comments"
 
 git ls-remote --exit-code origin && git push
 cd "$previous_dir"
