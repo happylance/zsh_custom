@@ -1,4 +1,0 @@
-[submodule "shortcuts"]
-	path = shortcuts
-	url = https://github.com/happylance/zsh_custom_shortcuts.git
-    ignore = all
