@@ -1,27 +1,27 @@
-#!/bin/zsh
-
-previous_dir=$(pwd)
-. "$HOME/.zshrc"
-[ -z "$ZSH_CUSTOM" ] && { echo "\$ZSH_CUSTOM is not defined."; exit 1; }
+#!/usr/bin/env zsh
+previous_dir=$PWD
+eval $(grep ZSH_CUSTOM "$HOME/.zshrc")
+[ -z "$ZSH_CUSTOM" ] && { echo "\$ZSH_CUSTOM is not defined."; exit 1; } 
 
 DIR="$ZSH_CUSTOM"
+
+self=$0
+_echo_usage () {
+    cat << EOF
+usage: $self [alias] ["command"]
+Example: $self tpc "top -o cpu"
+EOF
+}
+
+[ -z "$1" ] && { _echo_usage ; exit 2; }
+[ -z "$2" ] && { _echo_usage ; exit 2; }
+
 shortcut_file=shortcuts.zsh
 shortcut_folder=shortcuts
 [ -d "$DIR/$shortcut_folder" ] || mkdir "$DIR/$shortcut_folder"
 [ -d "$DIR/$shortcut_folder/.git" ] || {
   cd "$DIR/$shortcut_folder"
   git init; }
-
-_echo_usage () {
-    cat << EOF
-usage: $0 [alias] ["command"]
-Example: $0 tpc "top -o cpu"
-EOF
-    exit 2
-}
-
-[ -z "$1" ] && _echo_usage
-[ -z "$2" ] && _echo_usage
 
 . "$HOME/.zshrc"
 
