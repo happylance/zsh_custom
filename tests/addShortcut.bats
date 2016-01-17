@@ -1,5 +1,6 @@
 #!/usr/bin/env bats 
 @test "no arguments prints usage" {
+  ZSH_CUSTOM="$HOME/.zsh_custom"
   run ./addShortcut.sh
   [ $status -eq 2 ]
   [ $(expr "${lines[0]}" : 'usage: ./addShortcut.sh \[alias\] \["command"\]') -ne 0 ]
