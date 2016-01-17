@@ -9,5 +9,7 @@ before_install:
 - cd -
 - export PATH="$LOCAL/bin:$PATH"
 install: git clone --depth 1 https://github.com/sstephenson/bats.git
-script: PATH="./bats/bin:$PATH" bats tests
+script:
+- ./addShortcut.sh
+- PATH="./bats/bin:$PATH" bats tests
 language: c
