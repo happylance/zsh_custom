@@ -1,6 +1,6 @@
 #!/usr/bin/env bats 
 @test "no arguments prints usage" {
-  [ -e "$HOME/.zshrc" ] || touch "$HOME/.zshrc"
+  [ -e "$HOME/.zshrc" ] || echo 'ZSH_CUSTOM="$HOME/.zsh_custom"' > "$HOME/.zshrc"
   ZSH_CUSTOM="$HOME/.zsh_custom"
   run ./addShortcut.sh
   [ $status -eq 2 ]
