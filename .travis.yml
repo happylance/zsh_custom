@@ -8,8 +8,9 @@ before_install:
 - make install
 - cd -
 - export PATH="$LOCAL/bin:$PATH"
-- export ZSH_CUSTOM="$HOME/.zsh_custom"
+- git clone --depth 1 git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+- cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc 
 install: git clone --depth 1 https://github.com/sstephenson/bats.git
 script:
 - PATH="./bats/bin:$PATH" bats tests
-language: c
+Language: c
