@@ -8,6 +8,7 @@ before_install:
 - make install
 - cd -
 - export PATH="$LOCAL/bin:$PATH"
+- export ZSH_CUSTOM="$HOME/.zsh_custom"
 install: git clone --depth 1 https://github.com/sstephenson/bats.git
 script:
 - ./addShortcut.sh
