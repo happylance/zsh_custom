@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 previous_dir=$PWD
+[ -e "$HOME/.zshrc" ] || { echo "$HOME/.zshrc does not exist."; exit 2; } 
 eval $(grep ZSH_CUSTOM "$HOME/.zshrc")
 [ -z "$ZSH_CUSTOM" ] && { echo "\$ZSH_CUSTOM is not defined."; exit 1; } 
 
